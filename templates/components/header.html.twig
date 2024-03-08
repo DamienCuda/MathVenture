@@ -1,7 +1,11 @@
 <header>
-    <nav class="main_nav">
+    <nav id="main_nav">
+        <div id="logo_container">
+            <img src="{{ asset('images/logo_horizontal_text_blanc.svg') }}" alt=""/>
+        </div>
         <ul>
-            <li><a href="{{ path('app_homepage') }}">Home</a></a></li>      
+            <li><a href="{{ path('app_homepage_index') }}">Home</a></li>
+            <li><a href="{{ path('app_homepage_test') }}">Test</a></li>
         </ul>
     </nav>
 </header>
