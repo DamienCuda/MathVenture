@@ -7,7 +7,7 @@
 :root {
     --cl-white: #ffffff;
     --cl-dark: #011c27;
-    --cl-purple: #7E57C2;
+    --cl-purple: #3d30a2;
     --cl-light: #f8f7f5;
 }
 
@@ -29,10 +29,20 @@ a {
     color: inherit;
 }
 
+img {
+    max-width: 100%;
+}
+
 #main_nav {
     background-color: var(--cl-purple);
-    display: flex;
-    width: 100%;
+    display: grid;
+    grid-template-columns: 20% 1fr 20%;
+    padding-inline: 5%;
+}
+
+#logo_container {
+    display: grid;
+    place-items: center;
 }
 
 #main_nav ul {

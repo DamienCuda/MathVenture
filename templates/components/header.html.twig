@@ -1,11 +1,18 @@
 <header>
     <nav id="main_nav">
         <div id="logo_container">
-            <img src="{{ asset('images/logo_horizontal_text_blanc.svg') }}" alt=""/>
+            <a href="{{ path('app_homepage_index') }}">
+                <img src="{{ asset('assets/images/logo_horizontal_text_blanc.svg') }}" alt=""/>
+            </a>
         </div>
-        <ul>
-            <li><a href="{{ path('app_homepage_index') }}">Home</a></li>
-            <li><a href="{{ path('app_homepage_test') }}">Test</a></li>
+        <ul id="nav_container">
+            <li><a href="{{ path('app_college') }}">Collège</a></li>
+            <li><a href="{{ path('app_lycee') }}">Lycée</a></li>
+            <li><a href="{{ path('app_quizz') }}">Quizz</a></li>
+        </ul>
+        <ul id="connexion_container">
+            <li><a href="{{ path('app_college') }}">Connexion</a></li>
+            <li><a href="{{ path('app_college') }}">Inscription</a></li>
         </ul>
     </nav>
 </header>

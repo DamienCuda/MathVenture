@@ -6,12 +6,13 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class HomepageController extends AbstractController
+class QuizzController extends AbstractController
 {
-    #[Route('/', name: 'app_homepage_index')]
+    #[Route('/quizz', name: 'app_quizz')]
     public function index(): Response
     {
-        return $this->render('homepage/index.html.twig', [
+        return $this->render('quizz/index.html.twig', [
+            'controller_name' => 'QuizzController',
         ]);
     }
 }
