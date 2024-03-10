@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Log in!{% endblock %}
-
+{% block stylesheets %}
+<link href="{{ asset('assets/css/form.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
 <form method="post">
     {% if error %}

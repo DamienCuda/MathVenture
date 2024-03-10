@@ -7,6 +7,7 @@
 
 :root {
     --cl-white: #ffffff;
+    --cl-black: #020202;
     --cl-dark: #011c27;
     --cl-light-purple: #B15EFF;
     --cl-purple: #3d30a2;
@@ -14,7 +15,6 @@
     --cl-yellow: #F0DE36;
     --cl-light: #f8f7f5;
     --ft-primary: "Fredoka", sans-serif;
-    ;
     --ft-secondary: "Comfortaa", sans-serif;
 }
 
@@ -22,7 +22,7 @@ body {
     background-color: var(--cl-light);
     min-height: 100vh;
     font-size: 16px;
-    font-family: system-ui, sans-serif;
+    font-family: var(--ft-secondary);
     display: grid;
 }
 
@@ -50,6 +50,14 @@ header {
     background-size: contain;
 }
 
+#nav_container a{
+    transition: color 0.5s;
+}
+
+#nav_container a:hover{
+    color: var(--cl-yellow);
+}
+
 #main_nav {
     display: grid;
     grid-template-columns: 20% 1fr 20%;
@@ -59,7 +67,7 @@ header {
 #nav_container {
     font-family: var(--ft-secondary);
     font-size: 1.2rem;
-    color: white;
+    color: var(--cl-white);
 }
 
 #logo_container {
@@ -91,15 +99,71 @@ header {
 /* Début : footer */
 
 footer {
-    display: grid;
-    place-items: center;
-    background-color: var(--cl-purple);
-    color: var(--cl-white);
     font-size: 1.2rem;
-    padding: 2rem;
     position: absolute;
     bottom: 0;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+footer #wave{
+    height: 8rem;
+    width: 100%;
+    background-image: url('../images/separator/footer_wave.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+footer #content{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--cl-purple);
+}
+
+footer #content ul{
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    color: var(--cl-white);
+    padding: 2rem;
+}
+
+footer #content ul:first-child{
+ align-items: flex-start;
+}
+
+footer #content ul:last-child{
+    align-items: flex-end;
+}
+
+footer #content ul li{
+    padding: 0.5rem;
+}
+
+footer #content ul li a{
+    transition: color 0.5s;
+}
+
+footer #content ul li a:hover{
+    color: var(--cl-yellow);
+}
+
+footer #content #logo {
+    display: flex;
+    align-items: center;
+}
+ 
+footer #content #logo img{
+    width: 5rem;
+    height: 5rem;
+}
+
+footer #copyright{
+    color: var(--cl-white);
+    background-color: var(--cl-black);
+    padding: 0.8rem;
+    text-align: center;
 }
 
 /* Fin : footer */
