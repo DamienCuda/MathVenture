@@ -5,6 +5,8 @@
 <link href="{{ asset('assets/css/form.css') }}" rel="stylesheet" />
 {% endblock %}
 {% block body %}
+
+<h2 class="title">connexion</h2>
 <form method="post">
     {% if error %}
         <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>

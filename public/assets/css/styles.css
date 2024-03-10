@@ -20,15 +20,10 @@
 
 body {
     background-color: var(--cl-light);
-    min-height: 100vh;
     font-size: 16px;
     font-family: var(--ft-secondary);
-    display: grid;
-}
-
-main {
-    display: grid;
-    place-items: center;
+    min-height: 100vh;
+    position: relative;
 }
 
 a {
@@ -45,9 +40,16 @@ img {
 /* Début : header */
 
 header {
+    background-color: var(--cl-purple);
+}
+header #wave{
+    background-color: var(--cl-light);
+    width: 100%;
+    height: 4rem;
     background-image: url('../images/separator/simple_wave.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
+    background-position: bottom;
 }
 
 #nav_container a{
@@ -100,11 +102,11 @@ header {
 
 footer {
     font-size: 1.2rem;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     display: flex;
     flex-direction: column;
+    position: absolute;
+    bottom: 0px;
 }
 
 footer #wave{
@@ -113,6 +115,7 @@ footer #wave{
     background-image: url('../images/separator/footer_wave.svg');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position: top;
 }
 
 footer #content{
@@ -206,3 +209,12 @@ footer #copyright{
     box-shadow: 0px 0px 0px 0px var(--cl-purple);
 }
 /* Fin : boutons */
+
+/* Début : titre */
+.title{
+    color: var(--cl-purple);
+    font-family: var(--ft-primary);
+    font-size: 3rem;
+    text-align: left;
+}
+/* Fin : titre */
