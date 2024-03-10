@@ -1,3 +1,4 @@
+/* Début : général */
 * {
     margin: 0;
     padding: 0;
@@ -7,8 +8,14 @@
 :root {
     --cl-white: #ffffff;
     --cl-dark: #011c27;
+    --cl-light-purple: #B15EFF;
     --cl-purple: #3d30a2;
+    --cl-orange: #FFA33C;
+    --cl-yellow: #F0DE36;
     --cl-light: #f8f7f5;
+    --ft-primary: "Fredoka", sans-serif;
+    ;
+    --ft-secondary: "Comfortaa", sans-serif;
 }
 
 body {
@@ -32,17 +39,38 @@ a {
 img {
     max-width: 100%;
 }
+/* Fin : général */
+
+
+/* Début : header */
+
+header {
+    background-image: url('../images/separator/simple_wave.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
 
 #main_nav {
-    background-color: var(--cl-purple);
     display: grid;
     grid-template-columns: 20% 1fr 20%;
     padding-inline: 5%;
 }
 
+#nav_container {
+    font-family: var(--ft-secondary);
+    font-size: 1.2rem;
+    color: white;
+}
+
 #logo_container {
     display: grid;
     place-items: center;
+}
+
+#connexion_container {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
 #main_nav ul {
@@ -55,9 +83,12 @@ img {
 
 #main_nav ul li {
     display: flex;
-    font-size: 1.2rem;
-    color: white;
 }
+
+/* Fin : header */
+
+
+/* Début : footer */
 
 footer {
     display: grid;
@@ -70,3 +101,44 @@ footer {
     bottom: 0;
     width: 100%;
 }
+
+/* Fin : footer */
+
+/* Début : Boutons */
+
+.button-y {
+    font-family: var(--ft-primary);
+    font-weight: bold;
+    color: var(--cl-purple);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: 2px solid var(--cl-yellow);
+    border-radius: 8px;
+    background-color: var(--cl-light);
+    -webkit-box-shadow: 3px 3px 0px 0px var(--cl-yellow);
+    box-shadow: 3px 3px 0px 0px var(--cl-yellow);
+    transition: box-shadow, -webkit-box-shadow 0.5s;
+}
+.button-y:hover{
+    -webkit-box-shadow: 0px 0px 0px 0px var(--cl-yellow);
+    box-shadow: 0px 0px 0px 0px var(--cl-yellow);
+}
+
+.button-p {
+    font-family: var(--ft-primary);
+    font-weight: bold;
+    color: var(--cl-purple);
+    font-size: 1.2rem;
+    padding: 0.5rem;
+    border: 2px solid var(--cl-purple);
+    border-radius: 8px;
+    background-color: var(--cl-light);
+    -webkit-box-shadow: 3px 3px 0px 0px var(--cl-purple);
+    box-shadow: 3px 3px 0px 0px var(--cl-purple);
+    transition: box-shadow, -webkit-box-shadow 0.5s;
+}
+.button-p:hover{
+    -webkit-box-shadow: 0px 0px 0px 0px var(--cl-purple);
+    box-shadow: 0px 0px 0px 0px var(--cl-purple);
+}
+/* Fin : boutons */
