@@ -51,6 +51,10 @@ class Utilisateur implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column]
     private ?\DateTimeImmutable $updatedAt = null;
 
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
     public function getEmail(): ?string
     {
         return $this->email;
