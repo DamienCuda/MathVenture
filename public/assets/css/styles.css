@@ -38,6 +38,8 @@ img {
     display: grid;
     grid-template-columns: 20% 1fr 20%;
     padding-inline: 5%;
+    padding-block: 2rem;
+    align-items: center;
 }
 
 #logo_container {
@@ -48,15 +50,30 @@ img {
 #main_nav ul {
     display: flex;
     gap: 1rem;
-    padding: 2rem;
     justify-content: center;
-
+    align-items: center;
 }
 
 #main_nav ul li {
     display: flex;
     font-size: 1.2rem;
     color: white;
+}
+
+.user_actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.user_actions p {
+    color: var(--cl-white);
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.user_account {
+    max-width: 2rem;
 }
 
 footer {
@@ -69,4 +86,21 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
+}
+
+/* Flash messages */
+
+.flash-message {
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    width: fit-content;
+    height: fit-content;
+    margin-inline: auto;
+}
+
+.flash-message.message-error {
+    border: 1px solid var(--cl-dark);
+    background-color: var(--cl-purple);
+    color: var(--cl-white);
 }

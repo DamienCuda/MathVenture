@@ -3,6 +3,14 @@
 {% block title %}MathVenture | Accueil{% endblock %}
 
 {% block body %}
-<h1>Let's goo !</h1>
+    <h1>Let's goo !</h1>
+    <section id="faqs">
+        {% for faq in faqs %}
+            <article>
+                <p class="question"> {{ faq.question }}</p>
+                <p class="question"> {{ faq.answer }}</p>
+            </article>
+        {% endfor %}
+    </section>
 {% endblock %}
 
