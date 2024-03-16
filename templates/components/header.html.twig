@@ -1,8 +1,8 @@
 <header>
     <nav id="main_nav">
         <div id="logo_container">
-            <a href="{{ path('app_homepage_index') }}">
-                <img src="{{ asset('assets/images/logo_horizontal_text_blanc.svg') }}" alt="" />
+            <a href="{{ path('app_home') }}">
+                <img src="{{ asset('assets/images/logo_horizontal_text_blanc.svg') }}" alt=""/>
             </a>
         </div>
         <ul id="nav_container">
@@ -15,6 +15,23 @@
             <a href="{{ path('app_login') }}" class="button-y">Connexion</a>
             <a href="{{ path('app_register') }}" class="button-y">Inscription</a>
         </div>
+        {% if app.user %}
+        <div class="user_actions">
+            <p>Hello {{app.user.firstname}}</p>
+            <ul id="connected_container">
+                <li><a href="{{ path('app_user') }}"><img class="user_account" src="{{ asset('assets/images/user_account.svg') }}" alt=""/></a></li>
+                <li><a href="{{ path('app_logout') }}"><img class="user_account" src="{{ asset('assets/images/logout.svg') }}" alt=""/></a></li>
+                {% if is_admin %}
+                <li><a href="{{ path('admin') }}"><img class="user_account" src="{{ asset('assets/images/cog.svg') }}" alt=""/></a></li>
+                {% endif %}
+            </ul>
+        </div>
+        {% else %}
+        <ul id="connexion_container">
+            <li><a href="{{ path('app_login') }}">Connexion</a></li>
+            <li><a href="{{ path('app_register') }}">Inscription</a></li>
+        </ul>
+        {% endif %}
     </nav>
     <div id="wave"></div>
 </header>
