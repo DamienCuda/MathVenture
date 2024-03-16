@@ -74,8 +74,6 @@ header #wave{
     display: grid;
     grid-template-columns: 20% 1fr 20%;
     padding-inline: 5%;
-    padding-block: 2rem;
-    align-items: center;
 }
 
 #nav_container {
@@ -98,8 +96,9 @@ header #wave{
 #main_nav ul {
     display: flex;
     gap: 1rem;
+    padding: 2rem;
     justify-content: center;
-    align-items: center;
+
 }
 
 #main_nav ul li {
@@ -110,21 +109,6 @@ header #wave{
 
 
 /* Début : footer */
-.user_actions {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-}
-
-.user_actions p {
-    color: var(--cl-white);
-    text-align: center;
-    font-size: 1.2rem;
-}
-
-.user_account {
-    max-width: 2rem;
-}
 
 footer {
     font-size: 1.2rem;
