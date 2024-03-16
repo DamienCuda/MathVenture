@@ -27,6 +27,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow-x: hidden;
 }
 
 a {
@@ -191,6 +192,7 @@ footer #copyright{
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 0.5rem;
+    margin: 0.5rem;
     border: 2px solid var(--cl-yellow);
     border-radius: 8px;
     background-color: var(--cl-white);
@@ -212,6 +214,7 @@ footer #copyright{
     font-size: 1.2rem;
     text-transform: uppercase;
     padding: 0.5rem;
+    margin: 0.5rem;
     border: 2px solid var(--cl-purple);
     border-radius: 8px;
     background-color: var(--cl-white);
@@ -235,3 +238,13 @@ footer #copyright{
     padding-bottom: 3rem;
 }
 /* Fin : titre */
+
+/* Début : image */
+.image-y {
+    border: 2px solid var(--cl-yellow);
+    border-radius: 8px;
+    background-color: var(--cl-white);
+    -webkit-box-shadow: 3px 3px 0px 0px var(--cl-yellow);
+    box-shadow: 3px 3px 0px 0px var(--cl-yellow);
+}
+/* Fin : image */
