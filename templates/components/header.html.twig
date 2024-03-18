@@ -16,7 +16,7 @@
             <ul id="connected_container">
                 <li><a href="{{ path('app_user') }}"><img class="user_account" src="{{ asset('assets/images/user_account.svg') }}" alt=""/></a></li>
                 <li><a href="{{ path('app_logout') }}"><img class="user_account" src="{{ asset('assets/images/logout.svg') }}" alt=""/></a></li>
-                {% if is_admin %}
+                {% if is_granted('ROLE_ADMIN') %}
                 <li><a href="{{ path('admin') }}"><img class="user_account" src="{{ asset('assets/images/cog.svg') }}" alt=""/></a></li>
                 {% endif %}
             </ul>
