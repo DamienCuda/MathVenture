@@ -34,6 +34,7 @@ header #wave {
     background-image: url('../images/icons/icons_header.svg');
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
 }
 #banner .content div{
     width: 50%;
@@ -164,6 +165,7 @@ header #wave {
     background-image: url('../images/icons/icons.svg');
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center;
 }
 
 #join-us .content div {

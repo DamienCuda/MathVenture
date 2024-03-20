@@ -6,6 +6,7 @@
             </a>
         </div>
         <ul id="nav_container">
+            <li><a href="{{ path('app_home') }}">Accueil</a></li>
             <li><a href="{{ path('app_college') }}">Collège</a></li>
             <li><a href="{{ path('app_lycee') }}">Lycée</a></li>
             <li><a href="{{ path('app_quizz') }}">Quizz</a></li>
@@ -23,8 +24,8 @@
         </div>
         {% else %}
         <ul id="connexion_container">
-            <li><a href="{{ path('app_login') }}">Connexion</a></li>
-            <li><a href="{{ path('app_register') }}">Inscription</a></li>
+            <li><a class="button-y" href="{{ path('app_login') }}">Connexion</a></li>
+            <li><a class="button-y" href="{{ path('app_register') }}">Inscription</a></li>
         </ul>
         {% endif %}
     </nav>
