@@ -1,16 +1,129 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}MathVenture | Accueil{% endblock %}
-
-{% block body %}
-    <h1>Let's goo !</h1>
-    <section id="faqs">
-        {% for faq in faqs %}
-            <article>
-                <p class="question"> {{ faq.question }}</p>
-                <p class="question"> {{ faq.answer }}</p>
-            </article>
-        {% endfor %}
-    </section>
+{% block stylesheets %}
+<link href="{{ asset('assets/css/index.css') }}" rel="stylesheet" />
 {% endblock %}
 
+{% block body %}
+
+<section id="banner">
+    <div class="content container">
+        <div class="presentation">
+            <div class="card">
+                <h2>La MathVenture te tente ?</h2>
+                <p>Une application de soutien scolaire spécialisé dans les mathématiques pour ceux qui ont besoin de plus
+                    qu'un
+                    cours !</p>
+                <a class="button-p" href="">En savoir plus</a>
+            </div>
+        </div>
+        <div class="image">
+            <img class="image-y" src="{{ asset('assets/images/storyset/Mathematics-cuate.png') }}"
+                alt="Élève qui apprend les mathématiques">
+        </div>
+    </div>
+    {# <div class="number">
+        <img src="" alt="Symbole mathématique">
+    </div> #}
+    <div class="wave-down"></div>
+</section>
+
+<section class="container" id="presentation">
+    <div class="case">
+        <img src="{{ asset('assets/images/icons/book.png') }}" alt="Logo user" width="64" height="64">
+        <h3 class="title">Des cours</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        <a class="button-p" href="">En savoir plus</a>
+    </div>
+    <div class="case">
+        <img src="{{ asset('assets/images/icons/interogation.png') }}" alt="Logo user" height="64">
+        <h3 class="title">Des quizz</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        <a class="button-p" href="">En savoir plus</a>
+    </div>
+    <div class="case">
+        <img src="{{ asset('assets/images/icons/people.png') }}" alt="Logo user" width="64" height="64">
+        <h3 class="title">Une communauté</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        <a class="button-p" href="">En savoir plus</a>
+    </div>
+</section>
+
+<section class="container" id="mascotte">
+    <h2 class="title">notre mascotte</h2>
+    <div class="content">
+        <div id="cloud">
+            <p>Archi sera là pour t'accompagner dans ton apprentissage</p>
+        </div>
+        <div id="archi">
+            <img src="{{ asset('assets/images/archi/archi.svg') }}" alt="Notre mascotte Archi">
+        </div>
+    </div>
+</section>
+
+<section class="" id="join-us">
+    <div class="wave-up"></div>
+    <div class="content container">
+        <div class="image">
+            <img class="image-y" src="{{ asset('assets/images/storyset/inscription.png') }}" alt="Élève qui s'inscrit">
+        </div>
+        <div class="presentation">
+            <p>rejoins l'aventure des mathématiques !</p>
+            <a class="button-y" href="{{ path('app_register') }}">Inscription</a>
+        </div>
+    </div>
+    {# <div class="number">
+        <img src="" alt="Symbole mathématique">
+    </div> #}
+    <div class="wave-down"></div>
+</section>
+
+<section class="container" id="faq">
+    <h2 class="title">faq</h2>
+    <div class="content">
+        <div class="case">
+            <div class="head">
+                <img src="{{ asset('assets/images/icons/arrow.png') }}" alt="Logo user" width="64" height="64">
+                <a class="question">Question ipsum dolor sit amet ?</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        </div>
+        <div class="case">
+            <div class="head">
+                <img src="{{ asset('assets/images/icons/arrow.png') }}" alt="Logo user" width="64" height="64">
+                <a class="question">Question ipsum dolor sit amet ?</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        </div>
+        <div class="case">
+            <div class="head">
+                <img src="{{ asset('assets/images/icons/arrow.png') }}" alt="Logo user" width="64" height="64">
+                <a class="question">Question ipsum dolor sit amet ?</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        </div>
+        <div class="case">
+            <div class="head">
+                <img src="{{ asset('assets/images/icons/arrow.png') }}" alt="Logo user" width="64" height="64">
+                <a class="question">Question ipsum dolor sit amet ?</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        </div>
+        <div class="case">
+            <div class="head">
+                <img src="{{ asset('assets/images/icons/arrow.png') }}" alt="Logo user" width="64" height="64">
+                <a class="question">Question ipsum dolor sit amet ?</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        </div>
+        <div class="case">
+            <div class="head">
+                <img src="{{ asset('assets/images/icons/arrow.png') }}" alt="Logo user" width="64" height="64">
+                <a class="question">Question ipsum dolor sit amet ?</a>
+            </div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc iaculis.</p>
+        </div>
+    </div>
+</section>
+{% endblock %}
