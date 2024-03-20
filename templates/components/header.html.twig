@@ -13,7 +13,7 @@
         </ul>
         {% if app.user %}
         <div class="user_actions">
-            <p>Hello {{app.user.firstname}}</p>
+            <p>Bonjour {{app.user.firstname}}</p>
             <ul id="connected_container">
                 <li><a href="{{ path('app_user') }}"><img class="user_account" src="{{ asset('assets/images/user_account.svg') }}" alt=""/></a></li>
                 <li><a href="{{ path('app_logout') }}"><img class="user_account" src="{{ asset('assets/images/logout.svg') }}" alt=""/></a></li>

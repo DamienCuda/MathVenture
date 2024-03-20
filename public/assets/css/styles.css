@@ -67,6 +67,22 @@ header #wave{
     transition: color 0.5s;
 }
 
+header .user_actions{
+    display: flex;
+    align-items: center;
+    color: var(--cl-white);
+    font-family: var(--ft-secondary);
+}
+
+header .user_actions p{
+    min-width: fit-content;
+}
+
+#connected_container img{
+    width: 2rem;
+    height: auto;
+}
+
 #nav_container a:hover{
     color: var(--cl-yellow);
 }
