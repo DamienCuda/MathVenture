@@ -2,34 +2,35 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Category;
+use App\Entity\Sublevel;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Action;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Actions;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextEditorField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Crud;
 
-class CategoryCrudController extends AbstractCrudController
+class SublevelCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Category::class;
+        return Sublevel::class;
     }
 
     public function configureCrud(Crud $crud): Crud
     {
         return $crud
-            ->setEntityLabelInPlural('Catégories' )
-            ->setEntityLabelInSingular('Catégorie')
-            ->setPageTitle('edit', 'Modification catégorie');
+            ->setEntityLabelInPlural('Classes' )
+            ->setEntityLabelInSingular('Classe')
+            ->setPageTitle('edit', 'Modification classe');
     }
     public function configureActions(Actions $actions): Actions
     {
         return $actions
             ->update(Crud::PAGE_INDEX, Action::NEW,
-                fn (Action $action) => $action->setLabel('Ajouter catégorie'))
+                fn (Action $action) => $action->setLabel('Ajouter une classe'))
             ->update(Crud::PAGE_INDEX, Action::EDIT,
                 fn (Action $action) => $action->setLabel('Modifier'))
             ->update(Crud::PAGE_INDEX, Action::DELETE,
@@ -50,6 +51,8 @@ class CategoryCrudController extends AbstractCrudController
         return [
             IdField::new('id')->hideOnForm(),
             TextField::new('name')->setLabel('Nom'),
+            TextField::new('slug')->onlyOnForms()->setLabel('Slug'),
+            AssociationField::new('ParentLevel')->setLabel('Niveau')->setFormTypeOption('multiple', false),
         ];
     }
 }
