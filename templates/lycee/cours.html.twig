@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MathVenture | {{ cours.title }}{% endblock %}
+
+{% block body %}
+    <h1>{{cours.title}} !</h1>
+    <section>
+        <div>
+            {# Extraction de l'id de la vidéo depuis l'url && et génération du lien#}
+            {% set videoId = cours.videourl|split('v=')|last %}
+            {% set embedUrl = 'https://www.youtube.com/embed/' ~ videoId %}
+            <iframe width="560" height="315" src="{{ embedUrl }}" allowfullscreen></iframe>
+        </div>
+        <div>
+            {{ cours.content|raw }}
+        </div>
+    </section>
+    <section class="actions">
+        <a href="/quizz/{{ cours.slug }}">Tenter le quizz !!</a>
+        <a href="/lycee/{{ cours.sublevel.slug }}">Retour</a>
+    </section>
+{% endblock %}

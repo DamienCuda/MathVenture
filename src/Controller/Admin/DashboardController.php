@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Category;
+use App\Entity\Course;
 use App\Entity\Faq;
 use App\Entity\Level;
 use App\Entity\Sublevel;
@@ -28,10 +29,12 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linkToDashboard('Tableau de bord', 'fa fa-home');
+        yield MenuItem::linktoRoute('Retour au site', 'fas fa-home', 'app_home');
+        yield MenuItem::section('Administration');
         yield MenuItem::linkToCrud('Catégories', 'fas fa-list', Category::class);
         yield MenuItem::linkToCrud('FAQ', 'fas fa-circle-question', Faq::class);
         yield MenuItem::linkToCrud('Niveaux', 'fas fa-school', Level::class);
         yield MenuItem::linkToCrud('Classes', 'fas fa-graduation-cap', Sublevel::class);
+        yield MenuItem::linkToCrud('Cours', 'fas fa-chalkboard-user', Course::class);
     }
 }

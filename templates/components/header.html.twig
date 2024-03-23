@@ -29,5 +29,8 @@
         </ul>
         {% endif %}
     </nav>
-    <div id="wave"></div>
+    {% set home = app.request.get('_route') %}
+    {% if home != 'app_home' %}
+        <div id="wave"></div>
+    {% endif %}
 </header>

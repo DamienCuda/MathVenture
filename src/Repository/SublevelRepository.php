@@ -21,20 +21,19 @@ class SublevelRepository extends ServiceEntityRepository
         parent::__construct($registry, Sublevel::class);
     }
 
-    //    /**
-    //     * @return Sublevel[] Returns an array of Sublevel objects
-    //     */
-    //    public function findByExampleField($value): array
-    //    {
-    //        return $this->createQueryBuilder('s')
-    //            ->andWhere('s.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->orderBy('s.id', 'ASC')
-    //            ->setMaxResults(10)
-    //            ->getQuery()
-    //            ->getResult()
-    //        ;
-    //    }
+        /**
+         * @return Sublevel[] Returns an array of Sublevel objects
+         */
+        public function findByParentLevelId($value, $orderby = 'id'): array
+        {
+            return $this->createQueryBuilder('s')
+                ->andWhere('s.ParentLevel = :val')
+                ->setParameter('val', $value)
+                ->orderBy('s.'.$orderby, 'ASC')
+                ->getQuery()
+                ->getResult()
+            ;
+        }
 
     //    public function findOneBySomeField($value): ?Sublevel
     //    {

@@ -21,9 +21,13 @@ class Category
     #[ORM\ManyToMany(targetEntity: Faq::class, mappedBy: 'Categories')]
     private Collection $faqs;
 
+    #[ORM\ManyToMany(targetEntity: Course::class, mappedBy: 'category')]
+    private Collection $courses;
+
     public function __construct()
     {
         $this->faqs = new ArrayCollection();
+        $this->courses = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -73,5 +77,32 @@ class Category
     public function __toString(): string
     {
         return $this->name;
+    }
+
+    /**
+     * @return Collection<int, Course>
+     */
+    public function getCourses(): Collection
+    {
+        return $this->courses;
+    }
+
+    public function addCourse(Course $course): static
+    {
+        if (!$this->courses->contains($course)) {
+            $this->courses->add($course);
+            $course->addCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function removeCourse(Course $course): static
+    {
+        if ($this->courses->removeElement($course)) {
+            $course->removeCategory($this);
+        }
+
+        return $this;
     }
 }
