@@ -3,5 +3,53 @@
 {% block title %}MathVenture | Collège{% endblock %}
 
 {% block body %}
-<h1>Let's Collège !</h1>
+    <h1>Bienvenue au Collège !</h1>
+    <section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+        Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+    </section>
+    <section>
+        <h2>Tous les niveaux</h2>
+        {% for niveau in liste_niveau %}
+            <a href="college/{{ niveau.slug }}">{{ niveau.name }}</a>
+        {% endfor %}
+    </section>
+    <section>
+        <h2>Au programme cette année</h2>
+            <h3>Arithmétique et Calculs</h3>
+            <ul>
+                <li>Opérations de base (addition, soustraction, multiplication, division)</li>
+                <li>Calculs avec les fractions, les décimaux et les pourcentages</li>
+                <li>Puissances et racines carrées</li>
+                <li>Calculs littéraux</li>
+            </ul>
+
+            <h3>Algèbre</h3>
+            <ul>
+                <li>Équations du premier degré à une inconnue</li>
+                <li>Systèmes d'équations</li>
+                <li>Factorisation</li>
+                <li>Manipulation des expressions algébriques</li>
+            </ul>
+
+            <h3>Géométrie</h3>
+            <ul>
+                <li>Notions de base sur les figures géométriques (points, droites, segments, angles)</li>
+                <li>Propriétés des triangles et quadrilatères</li>
+                <li>Théorème de Pythagore et de Thalès</li>
+                <li>Introduction à la géométrie dans l'espace</li>
+            </ul>
+
+            <h3>Statistiques et Probabilités</h3>
+            <ul>
+                <li>Collecte et représentation de données</li>
+                <li>Moyennes, médianes et modes</li>
+                <li>Probabilités simples</li>
+            </ul>
+    </section>
 {% endblock %}

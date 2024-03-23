@@ -12,7 +12,12 @@ class QuizzController extends AbstractController
     public function index(): Response
     {
         return $this->render('quizz/index.html.twig', [
-            'controller_name' => 'QuizzController',
+        ]);
+    }
+    #[Route('/quizz/{cours_slug}', name: 'app_quizz_cours')]
+    public function quizz(string $cours_slug): Response
+    {
+        return $this->render('quizz/quizz.html.twig', [
         ]);
     }
 }

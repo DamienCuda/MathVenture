@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}MathVenture | Quizz{% endblock %}
+
+{% block body %}
+    <h1>Les quizz sont en cours de préparation ! <br/>Revient  bientôt !</h1>
+    <a href="{{ app.request.headers.get('referer') }}">Retour</a>
+{% endblock %}

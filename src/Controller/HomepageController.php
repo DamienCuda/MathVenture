@@ -14,7 +14,7 @@ class HomepageController extends AbstractController
     {
         $faqs = $faq->findAll();
         return $this->render('homepage/index.html.twig', [
-            'faqs' => $faqs
+            'faqs' => $faqs,
         ]);
     }
 }
