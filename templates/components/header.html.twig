@@ -2,23 +2,39 @@
     <nav id="main_nav">
         <div id="logo_container">
             <a href="{{ path('app_home') }}">
-                <img src="{{ asset('assets/images/logo_horizontal_text_blanc.svg') }}" alt=""/>
+                <img src="{{ asset('assets/images/logo_horizontal_text_blanc.svg') }}" alt="" />
             </a>
         </div>
-        <ul id="nav_container">
-            <li><a href="{{ path('app_home') }}">Accueil</a></li>
-            <li><a href="{{ path('app_college') }}">Collège</a></li>
-            <li><a href="{{ path('app_lycee') }}">Lycée</a></li>
-            <li><a href="{{ path('app_quizz') }}">Quizz</a></li>
-        </ul>
+        <div id="nav_container">
+            <div><a href="{{ path('app_home') }}">Accueil</a></div>
+            <div class="subnav"><a href="{{ path('app_college') }}">Collège</a>
+                <div class="sub-menu">
+                    <a href="{{ path('app_college') }}/sixieme">Sixième</a>
+                    <a href="{{ path('app_college') }}/cinquieme">Cinquième</a>
+                    <a href="{{ path('app_college') }}/quatrieme">Quatrième</a>
+                    <a href="{{ path('app_college') }}/troisieme">Troisième</a>
+                </div>
+            </div>
+            <div class="subnav"><a href="{{ path('app_lycee') }}">Lycée</a>
+                <div class="sub-menu">
+                    <a href="{{ path('app_lycee') }}/seconde">Seconde</a>
+                    <a href="{{ path('app_lycee') }}/premiere">Première</a>
+                    <a href="{{ path('app_lycee') }}/terminale">Terminale</a>
+                </div>
+            </div>
+            <div><a href="{{ path('app_quizz') }}">Quizz</a></div>
+        </div>
         {% if app.user %}
         <div class="user_actions">
             <p>Bonjour {{app.user.firstname}}</p>
             <ul id="connected_container">
-                <li><a href="{{ path('app_user') }}"><img class="user_account" src="{{ asset('assets/images/user_account.svg') }}" alt=""/></a></li>
-                <li><a href="{{ path('app_logout') }}"><img class="user_account" src="{{ asset('assets/images/logout.svg') }}" alt=""/></a></li>
+                <li><a href="{{ path('app_user') }}"><img class="user_account"
+                            src="{{ asset('assets/images/user_account.svg') }}" alt="" /></a></li>
+                <li><a href="{{ path('app_logout') }}"><img class="user_account"
+                            src="{{ asset('assets/images/logout.svg') }}" alt="" /></a></li>
                 {% if is_granted('ROLE_ADMIN') %}
-                <li><a href="{{ path('admin') }}"><img class="user_account" src="{{ asset('assets/images/cog.svg') }}" alt=""/></a></li>
+                <li><a href="{{ path('admin') }}"><img class="user_account" src="{{ asset('assets/images/cog.svg') }}"
+                            alt="" /></a></li>
                 {% endif %}
             </ul>
         </div>
@@ -31,6 +47,6 @@
     </nav>
     {% set home = app.request.get('_route') %}
     {% if home != 'app_home' %}
-        <div id="wave"></div>
+    <div id="wave"></div>
     {% endif %}
 </header>

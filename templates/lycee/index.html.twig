@@ -1,56 +1,70 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}MathVenture | Lycée{% endblock %}
-
+{% block stylesheets %}
+<link href="{{ asset('assets/css/class.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
-    <h1>Bienvenue au Lycée !</h1>
-    <section>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<section class="container">
+    <h2 class="title">bienvenue au Lycée !</h2>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
         Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
         Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem
+        aperiam.
         Eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-    </section>
-    <section>
-        <h2>Tous les niveaux</h2>
+        Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
+        eos qui ratione voluptatem sequi nesciunt.
+    </p>
+</section>
+<section class="container" id="levels">
+    <h2 class="title">tous les niveaux</h2>
+    <div id="level">
         {% for niveau in liste_niveau %}
-            <a href="lycee/{{ niveau.slug }}">{{ niveau.name }}</a>
+        <div class="case">
+            <img src="{{ asset('assets/images/icons/book.png') }}" alt="Logo user" width="64" height="64">
+            <h3 class="title">{{ niveau.name }}</h3>
+            <p>Ensemble des cours de niveau : {{ niveau.name }}</p>
+            <a class="button-p" href="lycee/{{ niveau.slug }}">En savoir plus</a>
+        </div>
         {% endfor %}
-    </section>
-    <section>
-        <h2>Au programme cette année</h2>
-        <h3>Mathématiques avancées</h3>
-        <ul>
-            <li>Calcul différentiel et intégral</li>
-            <li>Algèbre linéaire</li>
-            <li>Géométrie analytique</li>
-            <li>Probabilités avancées et statistiques</li>
-        </ul>
+    </div>
+</section>
+<section class="container">
+    <h2 class="title">au programme cette année</h2>
+    <h3>Mathématiques avancées</h3>
+    <ul>
+        <li>Calcul différentiel et intégral</li>
+        <li>Algèbre linéaire</li>
+        <li>Géométrie analytique</li>
+        <li>Probabilités avancées et statistiques</li>
+    </ul>
 
-        <h3>Physique</h3>
-        <ul>
-            <li>Mécanique classique</li>
-            <li>Électromagnétisme</li>
-            <li>Thermodynamique</li>
-            <li>Physique quantique</li>
-        </ul>
+    <h3>Physique</h3>
+    <ul>
+        <li>Mécanique classique</li>
+        <li>Électromagnétisme</li>
+        <li>Thermodynamique</li>
+        <li>Physique quantique</li>
+    </ul>
 
-        <h3>Chimie</h3>
-        <ul>
-            <li>Structure de la matière</li>
-            <li>Réactions chimiques</li>
-            <li>Cinétique chimique</li>
-            <li>Chimie organique</li>
-        </ul>
+    <h3>Chimie</h3>
+    <ul>
+        <li>Structure de la matière</li>
+        <li>Réactions chimiques</li>
+        <li>Cinétique chimique</li>
+        <li>Chimie organique</li>
+    </ul>
 
-        <h3>Informatique</h3>
-        <ul>
-            <li>Programmation avancée</li>
-            <li>Algorithmique et structures de données</li>
-            <li>Bases de données</li>
-            <li>Intelligence artificielle et apprentissage automatique</li>
-        </ul>
-    </section>
+    <h3>Informatique</h3>
+    <ul>
+        <li>Programmation avancée</li>
+        <li>Algorithmique et structures de données</li>
+        <li>Bases de données</li>
+        <li>Intelligence artificielle et apprentissage automatique</li>
+    </ul>
+</section>
 {% endblock %}
