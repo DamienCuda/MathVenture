@@ -1,15 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Mon compte{% endblock %}
-
+{% block stylesheets %}
+<link href="{{ asset('assets/css/user.css') }}" rel="stylesheet" />
+<link href="{{ asset('assets/css/form.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
-<h1>Hello {{app.user.firstname}}</h1>
-<div class="edit_user">
+<div class="edit_user container">
+    <h1 class="title">hello {{app.user.firstname}}</h1>
     {{ form_start(form) }}
         {{ form_row(form.firstname) }}
         {{ form_row(form.lastname) }}
         {{ form_row(form.email) }}
     {{ form_end(form) }}
 </div>
-<a href="{{ path('app_user') }}">Retour ◀️</a>
+<a class="button-p" href="{{ path('app_user') }}">Retour ◀️</a>
 {% endblock %}

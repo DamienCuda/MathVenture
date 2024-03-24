@@ -11,7 +11,11 @@
             <img src="{{ asset('assets/images/logo_solo.svg') }}" alt="" />
         </a>
         <ul>
-            <li><a href="">Mon compte</a></li>
+            {% if app.user %}
+            <li><a href="{{ path('app_user') }}">Mon compte</a></li>
+            {% else %}
+            <li><a href="{{ path('app_login') }}">Mon compte</a></li>
+            {% endif %}
             <li><a href="">Aide</a></li>
             <li><a href="">Nos formations</a></li>
             <li><a href="">Préférences et cookies</a></li>

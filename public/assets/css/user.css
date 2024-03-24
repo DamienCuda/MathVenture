@@ -1,0 +1,20 @@
+main {
+    max-width: unset;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    margin: 2rem 0;
+    font-size: 1.2rem;
+    max-width: 1200px;
+    width: 100%;
+    padding: 2rem;
+}
+
+.user_infos{
+    font-size: 1.2rem;
+    font-family: var(--ft-secondary);
+}

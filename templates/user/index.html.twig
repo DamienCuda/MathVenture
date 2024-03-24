@@ -1,10 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Mon compte{% endblock %}
-
+{% block stylesheets %}
+<link href="{{ asset('assets/css/user.css') }}" rel="stylesheet" />
+{% endblock %}
 {% block body %}
-<h1>Hello {{app.user.firstname}}</h1>
-<div class="user_infos">
+<div class="user_infos container">
+    <h1 class="title">hello {{app.user.firstname}}</h1>
     <p>Prénom : {{app.user.firstname}}</p>
     <p>Nom : {{app.user.lastname}}</p>
     <p>Email : {{app.user.email}}</p>
